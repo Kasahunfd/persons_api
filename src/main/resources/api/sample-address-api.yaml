@@ -40,6 +40,18 @@
               }
             }
           },
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "message": "Created"
+                  }
+                }
+              }
+            }
+          },
           "401": {
             "description": "bad request\n"
           },
@@ -54,13 +66,7 @@
           },
           "500": {
             "description": "Server error\n"
-          },
-          "default": {
-            "description": "unexpected error",
-            "schema": {
-                "$ref": "#/components/schemas/Error"
-            }
-        }
+          }
         },
         "operationId": "GET_persons",
         "security": [
