@@ -53,44 +53,16 @@
             }
           },
           "401": {
-            "description": "bad request\n",
-            "schema": {
-                    "type": "array",
-                    "additionalProperties": false,
-                    "items": {
-                        "$ref": "#/components/schemas/Pet"
-                    }
-                }
+            "description": "bad request\n\"$schema\": \"https://json-schema.org/draft-04/schema#\",\n\"type\": \"object\",\n\"properties\": {\n  \"firstName\": {\n    \"type\": \"string\"\n  },\n  \"lastName\": {\n    \"type\": \"string\"\n  },\n  \"age\": {\n    \"type\": \"integer\"\n  }\n},\n\"required\": [\n  \"firstName\",\n  \"lastName\",\n  \"age\"\n]\n"
           },
           "403": {
-            "description": "invalid request\n",
-            "schema": {
-                    "type": "array",
-                    "additionalProperties": false,
-                    "items": {
-                        "$ref": "#/components/schemas/Pet"
-                    }
-                }
+            "description": "invalid request\n"
           },
           "404": {
-            "description": "No description.",
-            "schema": {
-                    "type": "array",
-                    "additionalProperties": false,
-                    "items": {
-                        "$ref": "#/components/schemas/Pet"
-                    }
-                }
+            "description": "No description."
           },
           "429": {
-            "description": "Invalid get.",
-            "schema": {
-                    "type": "array",
-                    "additionalProperties": false,
-                    "items": {
-                        "$ref": "#/components/schemas/Pet"
-                    }
-                }
+            "description": "Invalid get."
           },
           "500": {
             "description": "Server error\n"
