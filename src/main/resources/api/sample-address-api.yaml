@@ -6,7 +6,7 @@
   },
   "servers": [
     {
-      "url": "https://sample-address-api.us-e2.cloudhub.io/"
+      "url": "http://sample-address-api.us-e2.cloudhub.io/"
     }
   ],
   "paths": {
@@ -39,6 +39,21 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "bad request\n"
+          },
+          "403": {
+            "description": "invalid request\n"
+          },
+          "404": {
+            "description": "No description."
+          },
+          "429": {
+            "description": "Invalid get."
+          },
+          "500": {
+            "description": "Server error\n"
           }
         },
         "operationId": "GET_persons",
