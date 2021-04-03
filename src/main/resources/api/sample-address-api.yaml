@@ -6,7 +6,7 @@
   },
   "servers": [
     {
-      "url": "http://sample-address-api.us-e2.cloudhub.io/"
+      "url": "https://sample-address-api.us-e2.cloudhub.io/"
     }
   ],
   "paths": {
