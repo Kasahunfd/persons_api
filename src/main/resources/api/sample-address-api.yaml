@@ -40,7 +40,6 @@
               }
             }
           },
-          
           "401": {
             "description": "bad request\n"
           },
