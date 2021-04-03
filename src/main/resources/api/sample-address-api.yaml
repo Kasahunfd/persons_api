@@ -1,59 +1,56 @@
-{
-  "openapi": "3.0.0",
-  "info": {
-    "title": "sample-address-api",
-    "version": "v1"
-  },
-  "servers": [
-    {
-      "url": "http://sample-address-api.us-e2.cloudhub.io/"
-    }
-  ],
-  "paths": {
-    "/persons": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "example": [
-                    {
-                      "id": 1,
-                      "name": "Edgar Moran",
-                      "username": "emoran",
-                      "email": "yucel.moran@some.test",
-                      "address": {
-                        "street": "Kulas Light",
-                        "suite": "Apt. 556",
-                        "city": "Gwenborough",
-                        "zipcode": "92998-3874",
-                        "geo": {
-                          "lat": "-37.3159",
-                          "lng": "81.1496"
-                        }
-                      }
-                    }
-                  ]
-                }
-              }
-            }
-          }
-        },
-        "operationId": "GET_persons"
-      }
-    }
-  },
-  "components": {
-    "schemas": {},
-    "responses": {},
-    "parameters": {},
-    "examples": {},
-    "requestBodies": {},
-    "headers": {},
-    "securitySchemes": {},
-    "links": {},
-    "callbacks": {}
-  }
-}
+#%RAML 1.0
+title: sample-address-api
+baseUri: http://sample-address-api.us-e2.cloudhub.io
+version: v1
+securitySchemes:
+  oauth_2_0:
+    description: |
+      This API supports OAuth 2.0 for authenticating all API requests.
+    type: OAuth 2.0
+    describedBy:
+      queryParameters:
+        access_token:
+          description: |
+              Used to send a valid OAuth 2 access token.
+          type: string
+      responses:
+        400:
+          description: Invalid token.
+        401:
+          description: |
+            Unauthorized or Connection error when connecting to the authorization server.
+        403:
+          description: |
+            Forbidden, invalid client application credentials.
+        500:
+          description: |
+            Bad response from authorization server, or WSDL SOAP Fault error.
+    settings:
+      authorizationUri: INSERT_OAUTH2_AUTHORIZATION_URI
+      accessTokenUri: INSERT_OAUTH2_ACCESS_TOKEN_URI
+      authorizationGrants: 
+      - client_credentials
+
+/persons:
+  get:
+    securedBy: [oauth_2_0]
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              [{
+                "id": 1,
+                "name": "Edgar Moran",
+                "username": "emoran",
+                "email": "yucel.moran@some.test",
+                "address": {
+                  "street": "Kulas Light",
+                  "suite": "Apt. 556",
+                  "city": "Gwenborough",
+                  "zipcode": "92998-3874",
+                  "geo": {
+                    "lat": "-37.3159",
+                    "lng": "81.1496"
+                  }
+                }}]
