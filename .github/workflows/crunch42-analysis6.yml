@@ -33,6 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+          -j:java -jar amf-client_2.12-4.7.0.jar translate  https://github.com/Kasahunfd/persons_api/tree/main/src/main/resources/api/sample-address-api.raml --format-in "application/raml+yaml" -mime-in "RAML 1.0" --format-out "application/json" -mime-out "OAS 3.0"
 
       - name: 42Crunch REST API Static Security Testing
         uses: 42Crunch/api-security-audit-action@v1
