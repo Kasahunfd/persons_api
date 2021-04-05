@@ -36,6 +36,11 @@
 	</build>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.raml</groupId>
+			<artifactId>webapi-parser</artifactId>
+			<version>0.5.0</version>
+		</dependency>
         <dependency>
             <groupId>org.mule.connectors</groupId>
             <artifactId>mule-http-connector</artifactId>
@@ -57,6 +62,14 @@
     </dependencies>
 
 	<repositories>
+		<repository>
+			<id>MuleSoftReleases</id>
+			<url>https://repository-master.mulesoft.org/nexus/content/repositories/releases</url>
+		</repository>
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
+		</repository>
           <repository>
             <id>anypoint-exchange-v2</id>
             <name>Anypoint Exchange</name>
@@ -69,6 +82,11 @@
             <url>https://repository.mulesoft.org/releases/</url>
             <layout>default</layout>
         </repository>
+		<repository>
+			<id>central</id>
+			<name>central</name>
+			<url>https://repo1.maven.org/maven2/</url>
+		</repository>
     </repositories>
     <pluginRepositories>
         <pluginRepository>
